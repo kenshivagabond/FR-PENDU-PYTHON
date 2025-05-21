@@ -34,21 +34,37 @@ def masque_depart(letter):
 def partie(letter,word):
     print(masque_depart(letter))
     n = input("entrez une lettre : ")
-    depart = list(masque_depart(letter))
-    i = 0
+    depart = list(masque_depart(letter))  # 
+    i , z = 0 , 0
     non_letter = 1
+    seen = []
+    found = False
     while i < len(letter):
         if n in letter:
-            depart = [element.replace('_', n) for element in depart]
-            print(f" lettre ", n, " trouvez")
+            found = True
+            for j in range(len(letter)):
+                if letter[j] == n:
+                   seen.append(j) #  A : (1,4,7) 
+            while(found and z < len(seen)):
+                 p = seen[z] 
+                 print(p)
+                 print(n)
+                 print(depart[p])
+                 depart[p] = n
+                 
+                 z += 1               
+            print(depart)      
+            print(f" lettre  {n}  trouvez")
             non_letter += 0
             n = input("entrez une lettre : ")
-            print(depart)
+        
+        
         elif n not in letter and non_letter < 3:
-            print(f"",non_letter," /3 lettre incorrecte")
+            print(f"",{non_letter}," /3 lettre incorrecte")
             non_letter += 1
             n = input("entrez une lettre :")
             print(depart)
+        
         else:
             print("perdu")
             break
