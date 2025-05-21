@@ -12,8 +12,6 @@ word = random.choice(data_into_list)
 
 letter = list(word)
 
-print(letter)
-
 def masque_depart(letter):
     letter_masque = []
     i = 0
@@ -37,11 +35,7 @@ def partie(letter,word):
     depart = list(masque_depart(letter))  # 
     i , z = 0 , 0
     non_letter = 1
-<<<<<<< HEAD
-    is_letter = 0
     already_use = []
-=======
->>>>>>> 325f6359e411d10cff6ecc5323d1bf05b4924f98
     seen = []
     found = False
     while i < len(letter):
@@ -49,7 +43,6 @@ def partie(letter,word):
             found = True
             for j in range(len(letter)):
                 if letter[j] == n:
-<<<<<<< HEAD
                    seen.append(j)
             while(found and z < len(seen)):
                  p = seen[z]
@@ -66,38 +59,13 @@ def partie(letter,word):
                 break
             non_letter += 0
             n = input("entrez une lettre : ")
-
-
-
-
-=======
-                   seen.append(j) #  A : (1,4,7) 
-            while(found and z < len(seen)):
-                 p = seen[z] 
-                 print(p)
-                 print(n)
-                 print(depart[p])
-                 depart[p] = n
-                 
-                 z += 1               
-            print(depart)      
-            print(f" lettre  {n}  trouvez")
-            non_letter += 0
-            n = input("entrez une lettre : ")
         
-        
->>>>>>> 325f6359e411d10cff6ecc5323d1bf05b4924f98
+
         elif n not in letter and non_letter < 3:
             print(f"",{non_letter}," /3 lettre incorrecte")
             non_letter += 1
             n = input("entrez une lettre :")
-<<<<<<< HEAD
 
-
-
-=======
-            print(depart)
->>>>>>> 325f6359e411d10cff6ecc5323d1bf05b4924f98
         
         else:
             print("perdu")
