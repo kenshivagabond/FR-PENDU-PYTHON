@@ -68,7 +68,7 @@ def partie(letter,word):
 
         
         else:
-            print("perdu")
+            print(f"perdu le mot était {word}")
             break
     i += 1
 
